@@ -17,5 +17,8 @@ Each instances of the `Patient` class `belongs_to` a user and has:
 2) Migrate the `users table` creation file and check the schema.
 3) Set up the `User` model to inherit from `ActiveRecord::Base`, and use the macro `has_secure_password` (which gives an `#authenticate` method for validation and password recovery option; it also gives a password assignment method that is encrypted and salted).
 4) Test the newly created model with tux.
-- 4)a seed the `users table.`
-- 4)b check the database and model using tux.
+5) Build out a migration file for the `patients table` for the `Patient` model with the attributes of `name`, `birthdate`, `weight`, `allergies`, and `user_id`.
+6) Migrate the `patients table`.
+7) Set up the `Patient` model.
+8) Set up the `User` model so that each user `has_many :patients` and the `Patient` model so that each patient `belongs_to :user`.
+9) Create seed entries and test with tux.
