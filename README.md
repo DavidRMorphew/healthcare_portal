@@ -14,7 +14,7 @@ Each instances of the `Patient` class `belongs_to` a user and has:
 * `user_id`
 ## Things to do to accomplish this:
 1) Build out a migration file for the `users table` for the `User` model with the two attributes of `username` and `password_digest`.
-2) Migrate the `users table` creation file.
+2) Migrate the `users table` creation file and check the schema.
 3) Set up the `User` model to inherit from `ActiveRecord::Base`, and use the macro `has_secure_password` (which gives an `#authenticate` method for validation and password recovery option; it also gives a password assignment method that is encrypted and salted).
 4) Test the newly created model with tux.
 - 4)a seed the `users table.`
