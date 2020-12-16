@@ -22,3 +22,4 @@ Each instances of the `Patient` class `belongs_to` a user and has:
 7) Set up the `Patient` model.
 8) Set up the `User` model so that each user `has_many :patients` and the `Patient` model so that each patient `belongs_to :user`.
 9) Create seed entries and test with tux.
+* [Note to self: to get the age form the date, one can divide the difference between the current time `Time.now` from `patient.birthdate` and divide by 31557600, which is the number of seconds in a year and then convert it into an ingeter (`to_i`)]
