@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     post "/signup" do
         user = User.new(params[:user])
         if user.save
-            binding.pry
             session[:user_id] = user.id
             redirect "/patients"
         else

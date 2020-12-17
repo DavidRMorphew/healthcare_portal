@@ -5,11 +5,10 @@
 
 <% if !@errors.nil? %>
     <% @errors.each do |message| %>
-        <p class="error">Error: <%= message %>.</p>
+        <h3 class="error">Error: <%= message %>.</h3>
     <% end %>
+    <br>
 <% end %>
-
-
 <form method="POST" action="/signup">
     <label for="username">Username: </label>
         <input type="text" id="username" name="user[username]" >
