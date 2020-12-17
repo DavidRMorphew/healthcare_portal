@@ -1,8 +1,15 @@
 <h1>Sign Up</h1>
 <br>
-<h3>If you are already registered, please <a href="/login">Log In</a>.</h3> 
-<h3>Otherwise, please sign up with a username and password below:</h3>
-<br>
+<p>If you are already registered, please <a href="/login">log in</a>.</p> 
+<p>Otherwise, please sign up with a username and password below:</p>
+
+<% if !@errors.nil? %>
+    <% @errors.each do |message| %>
+        <p class="error">Error: <%= message %>.</p>
+    <% end %>
+<% end %>
+
+
 <form method="POST" action="/signup">
     <label for="username">Username: </label>
         <input type="text" id="username" name="user[username]" >
