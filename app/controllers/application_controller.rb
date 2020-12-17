@@ -18,6 +18,10 @@ class ApplicationController < Sinatra::Base
     def logged_in?
       !!session[:user_id]
     end
+
+    def current_user
+      User.find_by(id: session[:user_id]) # Test the difference between find and find_by for id and which is better for this
+    end
   
   # Will use the following two in the patients controller: 
   # current_user

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
         user = User.new(params[:user])
         if user.save
             session[:user_id] = user.id
+            binding.pry
             redirect "/patients"
         else
             @errors = user.errors.full_messages
