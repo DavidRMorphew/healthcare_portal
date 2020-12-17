@@ -13,10 +13,14 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  # helpers
-  # logged_in?
+  helpers do
+  
+    def logged_in?
+      !!session[:user_id]
+    end
   
   # Will use the following two in the patients controller: 
   # current_user
   # authorized_to_change?(id)
+  end
 end
