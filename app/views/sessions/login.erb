@@ -1,5 +1,8 @@
 <h1>Please Log In</h1>
 <br>
+<% if @error %>
+    <h3 class="error">Error: <%= @error %></h3>
+<% end %>
 <form method="POST" action="/login">
     <h3><label for="username">Username:</label></h3>
         <p><input type="text" id="username" name="user[username]"> </p>
