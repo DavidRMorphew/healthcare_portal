@@ -4,7 +4,13 @@ class UsersController < ApplicationController
     end
 
     post "/signup" do
-        #  check uniqueness of password before creating new user
-        binding.pry
+        user = User.new(params[:users])
+        if user.save
+            session[:user_id] = user.id
+            redirect "/patients"
+        else
+            @errors = user.errors.full_messages
+            erb :"users/new"
+        end
     end
 end
