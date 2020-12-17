@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
     get "/login" do
+        if logged_in?
+            redirect "/patients"
+        end
         erb :"sessions/login"
     end
 
@@ -9,7 +12,6 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect "/patients"
         else
-            # binding.pry
             @error = "The Username or Password that was entered is incorrect."
             erb :"sessions/login"
         end
