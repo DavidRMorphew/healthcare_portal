@@ -6,11 +6,11 @@
 <% end %>
 <form method="POST" action="/patients">
     <div class="input-field">
-        <input type="text" id="patient_name" name="patient[name]" >
+        <input type="text" id="patient_name" name="patient[name]" required>
         <label for="patient_name">Patient Name:</label>
     </div>
     <div class="input-field">
-        <input type="text" id="birthdate" name="patient[birthdate]" >
+        <input type="text" id="birthdate" name="patient[birthdate]" required>
         <label for="birthdate">Birthdate (year-month-day):</label>
     </div>
     <div class="input-field">

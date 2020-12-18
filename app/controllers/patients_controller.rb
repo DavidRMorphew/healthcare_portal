@@ -22,20 +22,17 @@ class PatientsController < ApplicationController
         if new_patient.save
             redirect "/patients"
         else
-            binding.pry
             @errors = new_patient.errors.full_messages
             erb :"patients/new"
         end
     end
 
     get "/patients/:id" do
-        binding.pry
         @patient = Patient.find_by(id: params[:id])
-        if current_user.patients.include?(@patient)
+        if @patient && @patient.user != current_user
             erb :"patients/show"
         else
-            @error = "You are not authorized to view that patient's information."
-            erb :"patients/index"   # Add error message option to index page
+            redirect "/patients"
         end
     end
 end
