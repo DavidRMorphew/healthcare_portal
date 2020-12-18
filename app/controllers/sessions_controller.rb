@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect "/patients"
         else
-            @error = "The Username or Password that was entered is incorrect."
+            @error = "Username or Password entered was incorrect."
             erb :"sessions/login"
         end
     end
