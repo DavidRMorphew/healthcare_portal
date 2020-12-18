@@ -16,4 +16,8 @@ class SessionsController < ApplicationController
             erb :"sessions/login"
         end
     end
+
+    post "/logout" do
+        session.clear
+    end
 end
