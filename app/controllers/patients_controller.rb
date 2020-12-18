@@ -1,5 +1,9 @@
 class PatientsController < ApplicationController
     get "/patients" do
-        "Patients will be Listed Here"
+        if logged_in?
+            erb :"patients/index"
+        else
+            redirect "/login"
+        end
     end
 end
