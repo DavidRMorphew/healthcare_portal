@@ -31,14 +31,17 @@
         </ul>
       </div>
     </nav>
-        
+        <div class="container">
         <%= yield %>
-     
-      <footer class="branding">
+        </div>
+      <footer class="branding center">
+        <div class="container">
+        <br>
         <% if logged_in? %>
-         <p>Logged in as "<%= current_user.username %>"</p>
+         <h5>Logged in as "<%= current_user.username %>"</h5>
         <% end %>
         <small>&copy; 2020 <strong>HealthcarePortal</strong></small>
+        </div>
       </footer>
     </div>
 
