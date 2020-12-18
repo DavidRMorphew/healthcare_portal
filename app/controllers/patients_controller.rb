@@ -9,11 +9,14 @@ class PatientsController < ApplicationController
         end
     end
 
-    get "/patients/new"
+    get "/patients/new" do
         if logged_in?
             erb :"patients/new"
         else
             redirect "/login"
         end
+    end
+
+    create "/patients" do
     end
 end
