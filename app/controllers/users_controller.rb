@@ -14,7 +14,4 @@ class UsersController < ApplicationController
             erb :"users/new"
         end
     end
-
-  
-    
 end

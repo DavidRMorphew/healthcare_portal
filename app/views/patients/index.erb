@@ -1,11 +1,14 @@
 <h1>Patients</h1>
 <ul>
     <% @patients.each do |patient| %>
-        <li><h5><%= patient.name %></h5>
+        <h5><li><%= patient.name %></strong></h5>
             <% if current_user.patients.include?(patient) %>
                 <a href="/patients/<%= patient.id %>"> Patient Information</a>
+            <% else %>
+                <p>Patient Information Unavailable</p>
             <% end %>
         </li>
     <% end %>
+    <br>
     <h5><a href="/patients/new">Add a Patient</a></h5>
 </ul>
