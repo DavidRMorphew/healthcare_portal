@@ -1,3 +1,6 @@
+Artist.destroy_all
+Patient.destroy_all
+
 dr_bob = User.create(username: "DrBobRobertsRobertson", password: "drB0884B08")
 dr_phil = User.create(username: "DrPhilTheRealDoc", password: "m4st3r4D0c")
 
