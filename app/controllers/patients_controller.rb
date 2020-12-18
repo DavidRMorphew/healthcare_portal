@@ -18,10 +18,13 @@ class PatientsController < ApplicationController
     end
 
     post "/patients" do
-        binding.pry
-        if current_user.patients.create(params[:patient])
+        new_patient = current_user.patients.build(params[:patient])
+        if new_patient.save
             redirect "/patients"
         else
+            binding.pry
+            @errors = new_patient.errors.full_messages
+            erb :"patients/new"
         end
     end
 end
