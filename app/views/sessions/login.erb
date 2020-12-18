@@ -4,10 +4,14 @@
     <h5 class="error">Error: <%= @error %></h5>
 <% end %>
 <form method="POST" action="/login">
-    <h5>Username: </h5>
+    <div class="input-field">
         <input type="text" id="username" name="user[username]">
-    <h5>Password: </h5>
+        <label for="username">Username: </label>
+    </div>
+    <div class="input-field">
         <input type="password" id="password" name="user[password]">
+        <label for="password">Password: </label>
+    </div>
         <br>
     <input type="submit" value="Log In" class="btn cyan darken-2"><br><br>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtCzhoGS6sxZSqhW5i4HgnYJAUn5TVevZ3LQ&usqp=CAU" alt="Doctor with many happy patients and family members behind her">
