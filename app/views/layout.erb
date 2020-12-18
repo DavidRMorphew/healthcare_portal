@@ -23,16 +23,21 @@
     <div class="wrapper">
 
     <nav class="cyan darken-3">
-      <ul>
-        <% if logged_in? %>
-          <li>Logged in as "<%= current_user.username %>"</li>
-          <a href="/logout">Log Out</a>
-        <% end %>
-      </ul>
+      <div class="container">
+        <ul class="right">
+          <% if logged_in? %>
+            <a href="/logout">Log Out</a>
+          <% end %>
+        </ul>
+      </div>
     </nav>
+        
         <%= yield %>
-
+     
       <footer class="branding">
+        <% if logged_in? %>
+         <p>Logged in as "<%= current_user.username %>"</p>
+        <% end %>
         <small>&copy; 2020 <strong>HealthcarePortal</strong></small>
       </footer>
     </div>
