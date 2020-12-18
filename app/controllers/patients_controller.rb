@@ -17,6 +17,11 @@ class PatientsController < ApplicationController
         end
     end
 
-    create "/patients" do
+    post "/patients" do
+        binding.pry
+        if current_user.patients.create(params[:patient])
+            redirect "/patients"
+        else
+        end
     end
 end

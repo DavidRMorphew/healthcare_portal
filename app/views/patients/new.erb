@@ -1,22 +1,20 @@
 <h3>Add a New Patient<h3>
 <form method="POST" action="/patients">
-    <input type="hidden" id="hidden" name="_method" type="CREATE">
-        <div class="input-field">
-            <input type="text" id="patient_name" name="patient[name]" required>
-            <label for="patient_name">Patient Name:</label>
-        </div>
-        <div class="input-field">
-            <input type="text" id="birthdate" name="patient[birthdate]" required>
-            <label for="birthdate">Birthdate (year-month-day):</label>
-        </div>
-        <div class="input-field">
-            <input type="text" id="weight" name="patient[weight]" required>
-            <label for="weight">Weight (kg):</label>
-        </div>
-        <div class="input-field">
-            <input type="text" id="allergies" name="patient[allergies]">
-            <label for="allergies">Allergies:</label>
-        </div>
+    <div class="input-field">
+        <input type="text" id="patient_name" name="patient[name]" required>
+        <label for="patient_name">Patient Name:</label>
+    </div>
+    <div class="input-field">
+        <input type="text" id="birthdate" name="patient[birthdate]" required>
+        <label for="birthdate">Birthdate (year-month-day):</label>
+    </div>
+    <div class="input-field">
+        <input type="text" id="weight" name="patient[weight]" required>
+        <label for="weight">Weight (kg):</label>
+    </div>
+    <div class="input-field">
+        <input type="text" id="allergies" name="patient[allergies]">
+        <label for="allergies">Allergies:</label>
+    </div>
     <input type="submit" value="Add Patient" class="btn cyan darken-2">
-
 </form>
