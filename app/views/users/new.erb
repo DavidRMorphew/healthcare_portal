@@ -1,21 +1,21 @@
 <h1>Sign Up</h1>
 <br>
-<h3>If you are already registered, please <a href="/login">log in</a>.</h3>
+<h5>If you are already registered, please <a href="/login">log in</a>.</h5>
     <br>
-<h3>Otherwise, please sign up with a username and password below:</h3>
+<h5>Otherwise, please sign up with a username and password below:</h5>
     <br>
 
 <% if !@errors.nil? %>
     <% @errors.each do |message| %>
-        <h3 class="error">Error: <%= message %>.</h3>
+        <h5 class="error">Error: <%= message %>.</h5>
     <% end %>
     <br>
 <% end %>
 <form method="POST" action="/signup">
-    <h3><label for="username">Username:</label></h3>
-        <p><input type="text" id="username" name="user[username]"></p>
-    <h3><label for="password">Password:</label></h3>
-        <p><input type="password" id="password" name="user[password]"></p>
+    <h5>Username: </h5>
+        <input type="text" id="username" name="user[username]">
+     <h5>Password: </h5>
+        <input type="password" id="password" name="user[password]">
         <br>
     <input type="submit" value="Sign Up">
 </form>
