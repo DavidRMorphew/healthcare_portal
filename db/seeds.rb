@@ -9,4 +9,4 @@ dr_bob.patients.create(name: "Bob Ross", birthdate: "1942-10-29", weight: "68.0"
 dr_bob.patients.create(name: "Peter Sellers", birthdate: "1925-7-24", weight: "72.57", allergies: "diamonds")
 dr_phil.patients.create(name: "Michael Jackson", birthdate: "1958-8-29", weight: "59.97", allergies: "fentanyl, egg-yolks")
 dr_phil.patients.create(name: "Phil Heath", birthdate: "1979-12-18", weight: "109.3", allergies: "lactose")
-
+dr_bob.patients.create(name: "Bill Shakespeare", birthdate: "1564-04-01", weight: "60.0", allergies: "bad dialogue")

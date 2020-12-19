@@ -35,4 +35,14 @@ class PatientsController < ApplicationController
             redirect "/patients"
         end
     end
+
+    delete "/patients/:id" do
+        patient = Patient.find_by(id: params[:id])
+        if patient && patient.user == current_user
+            patient.destroy
+            redirect "/patients"
+        else
+            redirect "/patients"
+        end
+    end
 end
