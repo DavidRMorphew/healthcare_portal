@@ -31,7 +31,6 @@ class PatientsController < ApplicationController
     end
 
     delete "/patients/:id" do
-        binding.pry
         patient = Patient.find_by(id: params[:id])
         if patient && patient_of_user?(patient)
             patient.destroy
@@ -47,6 +46,17 @@ class PatientsController < ApplicationController
             erb :"patients/edit"
         else
             redirect "/patients"
+        end
+    end
+
+    patch "/patients/:id" do
+        @patient = Patient.find_by(id: params[:id])
+        if params[:patient][:name].empty? || params[:patient][:birthdate].nil?
+            @error = "Error: Name and Birthdate are required fields"
+            erb :"patients/edit"
+        else
+            @patient.update(params[:patient])
+            redirect "/patients/#{@patient.id}"            
         end
     end
 end
