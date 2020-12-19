@@ -26,10 +26,10 @@ class ApplicationController < Sinatra::Base
     def redirect_if_not_logged_in
       redirect "/login" unless logged_in?
     end
-  # Will use the following two in the patients controller: 
-  # current_user
-  # authorized_to_change?(instance)
-  # 
-
+  
+    def patient_of_user?(patient)
+      patient.user == current_user
+    end
+  
   end
 end

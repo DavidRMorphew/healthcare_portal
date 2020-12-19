@@ -23,7 +23,7 @@ class PatientsController < ApplicationController
 
     get "/patients/:id" do
         @patient = Patient.find_by(id: params[:id])
-        if @patient && @patient.user == current_user
+        if @patient && patient_of_user?(@patient)
             erb :"patients/show"
         else
             redirect "/patients"
@@ -31,8 +31,9 @@ class PatientsController < ApplicationController
     end
 
     delete "/patients/:id" do
+        binding.pry
         patient = Patient.find_by(id: params[:id])
-        if patient && patient.user == current_user
+        if patient && patient_of_user?(patient)
             patient.destroy
             redirect "/patients"
         else
