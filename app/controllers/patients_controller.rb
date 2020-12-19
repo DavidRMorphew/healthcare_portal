@@ -1,20 +1,14 @@
 class PatientsController < ApplicationController
     
     get "/patients" do
-        if logged_in?
-            @patients = Patient.all
-            erb :"patients/index"
-        else
-            redirect "/login"
-        end
+        redirect_if_not_logged_in
+        @patients = Patient.all
+        erb :"patients/index"
     end
 
     get "/patients/new" do
-        if logged_in?
-            erb :"patients/new"
-        else
-            redirect "/login"
-        end
+        redirect_if_not_logged_in
+        erb :"patients/new"
     end
 
     post "/patients" do

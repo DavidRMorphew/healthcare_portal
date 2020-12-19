@@ -23,7 +23,9 @@ class ApplicationController < Sinatra::Base
       @current_user ||= User.find_by(id: session[:user_id]) #memoization added here
     end
   
-    # redirect_if_not_logged_in
+    def redirect_if_not_logged_in
+      redirect "/login" unless logged_in?
+    end
   # Will use the following two in the patients controller: 
   # current_user
   # authorized_to_change?(instance)
