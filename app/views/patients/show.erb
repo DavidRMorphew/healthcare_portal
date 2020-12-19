@@ -9,7 +9,7 @@
 <h5>Allergies: </h5>
     <h6><%= @patient.allergies%></h6>
 <br>
-<h5><a href="patients/<%= @patient.id %>/edit">Edit Patient Information</a></h5>
+<h5><a href="/patients/<%= @patient.id %>/edit">Edit Patient Information</a></h5>
 <br>
 <h6><form method="POST" action="/patients/<%= @patient.id %>">
 <input type="hidden" id="hidden" name="_method" value="DELETE">

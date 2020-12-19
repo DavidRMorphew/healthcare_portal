@@ -40,4 +40,8 @@ class PatientsController < ApplicationController
             redirect "/patients"
         end
     end
+
+    get "/patients/:id/edit" do
+        "Edit page"
+    end
 end
