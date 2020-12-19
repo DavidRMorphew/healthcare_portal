@@ -1,12 +1,15 @@
 <h1><%= @patient.name %></h1>
-<form>
+<form method="POST" action="/patients/<%= @patient.id %>">
+<input type="hidden" id="hidden" name="_method" value="PATCH">
+<h5>Name: </h5>
+    <input type="text" name="patient[name]" value="<%= @patient.name %>">
 <h5>Birthdate: </h5> 
-    <h6><input type="text" value="<%= @patient.birthdate.strftime("%Y-%m-%d") %>"></h6>
-<h5>Age: </h5>
-    <h6><%= @patient.age%></h6>
+    <input type="text" name="patient[birthdate]" value="<%= @patient.birthdate.strftime("%Y-%m-%d") %>">
 <h5>Weight: </h5>
-    <h6><%= @patient.weight%></h6>
+    <input type="text" name="patient[weight]" value="<%= @patient.weight%>">
 <h5>Allergies: </h5>
-    <h6><%= @patient.allergies%></h6>
+    <input type="text" name="patient[allergies]" value="<%= @patient.allergies%>">
+    <br><br>
+<input type="submit" value="Update Patient Information" class="btn cyan darken-2">
 </form>
 <br>
