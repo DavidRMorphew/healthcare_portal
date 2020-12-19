@@ -1,3 +1,13 @@
-<h1><%= @patient.name %></h1>
+<h2><%= @patient.name %></h2>
+
 <h5>Birthdate: <%= @patient.birthdate.strftime("%Y-%m-%d") %></h5>
 <h5>Age: <%= @patient.age%></h5>
+<h5>Weight: <%= @patient.weight%></h5>
+<h5>Allergies: <%= @patient.age%></h5>
+<br>
+<h6><a href="patients/<%= @patient.id %>/edit">Edit Patient Information</a></h6>
+<br>
+<h6><form method="POST" action="/patients/<%= @patient.id %>">
+<input type="hidden" id="hidden" name="_method" value="DELETE">
+<input type="submit" value="Remove Patient" class="btn cyan darken-2">
+</form></h6>
