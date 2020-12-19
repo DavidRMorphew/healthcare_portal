@@ -29,7 +29,7 @@ class PatientsController < ApplicationController
 
     get "/patients/:id" do
         @patient = Patient.find_by(id: params[:id])
-        if @patient && @patient.user != current_user
+        if @patient && @patient.user == current_user
             erb :"patients/show"
         else
             redirect "/patients"
