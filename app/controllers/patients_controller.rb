@@ -42,6 +42,11 @@ class PatientsController < ApplicationController
     end
 
     get "/patients/:id/edit" do
-        "Edit page"
+        @patient = Patient.find_by(id: params[:id])
+        if @patient && patient_of_user?(@patient)
+            erb :"patients/edit"
+        else
+            redirect "/patients"
+        end
     end
 end
