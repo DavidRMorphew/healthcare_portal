@@ -1,4 +1,4 @@
-<h1>Patients</h1>
+<h1 class="center">Patients</h1>
 <ul>
     <% @patients.each do |patient| %>
         <h5><li><%= patient.name %></strong></h5>
@@ -9,6 +9,5 @@
             <% end %>
         </li>
     <% end %>
-    <br>
-    <h5><a href="/patients/new">Add a Patient</a></h5>
+<h5><a href="/patients/new">Add a Patient</a></h5>
 </ul>
