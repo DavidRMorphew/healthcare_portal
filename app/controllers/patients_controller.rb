@@ -30,14 +30,7 @@ class PatientsController < ApplicationController
         end
     end
 
-    delete "/patients/:id" do
-        patient = Patient.find_by(id: params[:id])
-        if patient && patient_of_user?(patient)
-            patient.destroy
-        end
-        redirect "/patients"
-    end
-
+    
     get "/patients/:id/edit" do
         @patient = Patient.find_by(id: params[:id])
         if @patient && patient_of_user?(@patient)
@@ -60,5 +53,13 @@ class PatientsController < ApplicationController
         else 
             redirect "/patients"
         end
+    end
+   
+    delete "/patients/:id" do
+        patient = Patient.find_by(id: params[:id])
+        if patient && patient_of_user?(patient)
+            patient.destroy
+        end
+        redirect "/patients"
     end
 end
