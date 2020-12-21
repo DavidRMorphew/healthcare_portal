@@ -50,7 +50,7 @@ class PatientsController < ApplicationController
     patch "/patients/:id" do
         @patient = Patient.find_by(id: params[:id])
         if @patient && patient_of_user?(@patient)
-            if params[:patient][:name].empty? || params[:patient][:birthdate].nil?
+            if params[:patient][:name].empty? || params[:patient][:birthdate].empty?
                 @error = "Error: Name and Birthdate are required fields"
                 erb :"patients/edit"
             else

@@ -29,6 +29,6 @@ class ApplicationController < Sinatra::Base
   
     def patient_of_user?(patient)
       patient.user == current_user
-    end 
+    end
   end
 end
