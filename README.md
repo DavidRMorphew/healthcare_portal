@@ -35,6 +35,9 @@ Before starting, be sure to run
 ```
 bundle install
 ```
+
+You will also want to create a `.env` file to store your `SESSION_SECRET`. (You can read more about how to use `dotenv` [here](https://github.com/bkeepers/dotenv).)
+
 To run the program locally on your computer  enter:
 ```
 shotgun
@@ -49,7 +52,7 @@ This will bring up a local:host url that you can copy and paste into a browser t
 
 (My local host server can be accessed by `http://127.0.0.1:9393/` in this instance.)
 
-### NB: Be sure to stop the server by pressing `CTRL+C` before closing the program.
+Be sure to stop the server by pressing `CTRL+C` before closing the program.
 
 ## Contributing
 
