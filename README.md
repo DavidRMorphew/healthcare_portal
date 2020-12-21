@@ -3,20 +3,20 @@
 
 ## Purpose and Usage
 
-This program serves as an easy-to-use patient information database. The user is intended to be an authorized healthcare provider who has patients in their care. The healthcare provider, once logged in, has access to their patients' information and the ability to modify their list of patients. The healthcare provider can, for example: 
+This program serves as an easy-to-use patient information database. The user is intended to be an authorized healthcare worker who has patients in their care. The healthcare worker, once logged in, has access to their patients' information and the ability to modify their list of patients. The healthcare worker can, for example: 
  
 * add new patients, 
 
 * view and edit sensitive patient information such as:
 
-    *  birthdate
+    * birthdate
     * weight
     * allergies
     * medications
 
 * remove patients in their care.
 
-Only if a given user has authorization will they be able to view and edit this information or remove a patient that is under their care.
+Only if a given user (i.e. healthcare worker) has authorization will they be able to view and edit this information or remove a patient that is under their care.
 
 ## Installation 
 
