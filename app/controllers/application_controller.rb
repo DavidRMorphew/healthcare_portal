@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      @current_user ||= User.find_by(id: session[:user_id]) #memoization added here
+      @current_user ||= User.find_by(id: session[:user_id]) if logged_in? #memoization added here
     end
   
     def redirect_if_not_logged_in
@@ -29,7 +29,6 @@ class ApplicationController < Sinatra::Base
   
     def patient_of_user?(patient)
       patient.user == current_user
-    end
-  
+    end 
   end
 end
