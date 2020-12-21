@@ -38,21 +38,30 @@ bundle install
 
 You will also want to create a `.env` file to store your `SESSION_SECRET`. (You can read more about how to use `dotenv` [here](https://github.com/bkeepers/dotenv).)
 
-To run the program locally on your computer  enter:
+There are two easy ways to run the program locally on your computer. 
+
+1. Enter into your Terminal:
+
 ```
 shotgun
 ```
-This will bring up a local:host url that you can copy and paste into a browser to begin using the program (if you are using VSCode on a Mac, you can hover over the url and click it while holding `command` to open the url in the browser).
+* This will bring up a localhost url that you can copy and paste into a browser to begin using the program. (My local host server can be accessed by `http://127.0.0.1:9393/`.)
 ```
 == Shotgun/Thin on http://127.0.0.1:9393/
-2020-12-20 22:14:19 -0500 Thin web server (v1.8.0 codename Possessed Pickle)
+2020-12-20 22:14:19 -0500 Thin web server (v1.8.0 codename Some Gibberish)
 2020-12-20 22:14:19 -0500 Maximum connections set to 1024
 2020-12-20 22:14:19 -0500 Listening on 127.0.0.1:9393, CTRL+C to stop
 ```
 
-(My local host server can be accessed by `http://127.0.0.1:9393/` in this instance.)
+2. Enter into your Terminal
 
-Be sure to stop the server by pressing `CTRL+C` before closing the program.
+```
+rackup config.ru
+```
+* As with `shotgun`, this will bring up a localhost url (`localhost:9292`) that you can copy and paste into your browser.
+
+Whether you use `rackup config.ru` or `shotgun` to run the program, be sure to stop the server by pressing `CTRL+C` before closing the program.
+
 
 ## Contributing
 
