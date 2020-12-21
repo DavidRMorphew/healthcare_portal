@@ -2,8 +2,9 @@ class SessionsController < ApplicationController
     get "/login" do
         if logged_in?
             redirect "/patients"
+        else
+            erb :"sessions/login"
         end
-        erb :"sessions/login"
     end
 
     post "/login" do
