@@ -33,8 +33,12 @@ class PatientsController < ApplicationController
     delete "/patients/:id" do
         patient = Patient.find_by(id: params[:id])
         if patient && patient_of_user?(patient)
-            patient.destroy
-            redirect "/patients"
+            if patient && patient_of_user?(patient)
+                patient.destroy
+                redirect "/patients"
+            else
+                redirect "/patients"
+            end
         else
             redirect "/patients"
         end
@@ -51,12 +55,16 @@ class PatientsController < ApplicationController
 
     patch "/patients/:id" do
         @patient = Patient.find_by(id: params[:id])
-        if params[:patient][:name].empty? || params[:patient][:birthdate].nil?
-            @error = "Error: Name and Birthdate are required fields"
-            erb :"patients/edit"
-        else
-            @patient.update(params[:patient])
-            redirect "/patients/#{@patient.id}"            
+        if @patient && patient_of_user?(@patient)
+            if params[:patient][:name].empty? || params[:patient][:birthdate].nil?
+                @error = "Error: Name and Birthdate are required fields"
+                erb :"patients/edit"
+            else
+                @patient.update(params[:patient])
+                redirect "/patients/#{@patient.id}"            
+            end
+        else 
+            redirect "/patients"
         end
     end
 end
