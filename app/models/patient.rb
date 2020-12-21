@@ -1,6 +1,6 @@
 class Patient < ActiveRecord::Base
     validates :name, presence: true
-    validates :birthdate, presence: true
+    validates :birthdate, presence: { message: "can't be blank or incorrectly formatted. Please enter [year]-[month]-[day]" }
     belongs_to :user
 
     def age
