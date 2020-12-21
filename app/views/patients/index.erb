@@ -1,13 +1,15 @@
 <h1 class="center">Patients</h1>
 <ul>
-    <% @patients.each do |patient| %>
-        <h5><li><%= patient.name %></strong></h5>
-            <% if current_user.patients.include?(patient) %>
-                <a href="/patients/<%= patient.id %>"> Patient Information</a>
-            <% else %>
-                <p>Patient Information Unavailable</p>
-            <% end %>
-        </li>
+    <% if @patients %>
+        <% @patients.each do |patient| %>
+            <h5><li><%= patient.name %></strong></h5>
+                <% if current_user.patients.include?(patient) %>
+                    <a href="/patients/<%= patient.id %>"> Patient Information</a>
+                <% else %>
+                    <p>Patient Information Unavailable</p>
+                <% end %>
+            </li>
+        <% end %>
     <% end %>
 <h5><a href="/patients/new">Add a Patient</a></h5>
 </ul>
