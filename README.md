@@ -5,7 +5,7 @@
 
 This program serves as an easy-to-use patient information database. The user is intended to be an authorized healthcare worker who has patients in their care. The healthcare worker, once logged in, has access to their patients' information and the ability to modify their list of patients. The healthcare worker can, for example: 
  
-* add new patients, 
+* add new patients 
 
 * view and edit sensitive patient information such as:
 
@@ -74,8 +74,6 @@ Please feel free to add and update tests where appropriate.
 ## Future Functionality
 
 I have included a drawio file, called `Table Relations.drawio` (which can be opened with a `Draw.io Integration` Plug-in for VSCode). This diagram maps out some proposed future functionality.
-
-In the diagram, "medications" are no longer a string attribute of "patients," but instead will have their own "medications" table and `Medication` model. In the proposed relationship, a patient `has_many` medications and a medication `has_many` patients, and it is `through: prescriptions` that patients are related to their medications. 
 
 I discuss ideas on this future expansion (and an interesting problem I encountered in showing errors and rendering the edit page for patients) in my [blog post](https://davidrmorphew.medium.com/my-healthcare-portal-sinatra-app-e94a9a19d56c).
 
