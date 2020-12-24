@@ -16,7 +16,9 @@ This program serves as an easy-to-use patient information database. The user is 
 
 * remove patients in their care.
 
-Only if a given user (i.e. healthcare worker) has authorization will they be able to view and edit this information or remove a patient that is under their care.
+Only if a given user (i.e. healthcare worker) has authorization will they be able to view and edit this information or remove a patient that is under their care. 
+
+Go [here](https://youtu.be/Q8wLdq6pL50) for a short video on how this app works.
 
 ## Installation 
 
