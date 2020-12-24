@@ -73,7 +73,9 @@ Please feel free to add and update tests where appropriate.
 
 I have included a drawio file, called `Table Relations.drawio` (which can be opened with a `Draw.io Integration` Plug-in for VSCode). This diagram maps out some proposed future functionality.
 
-In the diagram, "medications" are no longer a string attribute of "patients," but instead will have their own "medications" table and `Medication` model. In the proposed relationship, a patient `has_many` medications and a medication `has_many` patients, and it is `through: prescriptions` that patients are related to their medications.
+In the diagram, "medications" are no longer a string attribute of "patients," but instead will have their own "medications" table and `Medication` model. In the proposed relationship, a patient `has_many` medications and a medication `has_many` patients, and it is `through: prescriptions` that patients are related to their medications. 
+
+I discuss ideas on this future expansion (and an interesting problem I encountered in showing errors and rendering the edit page for patients) in my [blog post](https://davidrmorphew.medium.com/my-healthcare-portal-sinatra-app-e94a9a19d56c).
 
 ## License
 [MIT](https://github.com/DavidRMorphew/healthcare_portal/blob/main/LICENSE.txt)
